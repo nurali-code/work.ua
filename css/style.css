@@ -365,7 +365,7 @@ header {
 
 footer {
   text-align: center;
-  padding: 30px 15px 50px;
+  padding: 30px 15px 40px;
   background-color: rgba(0, 0, 0, 0.8);
   -webkit-border-radius: 50% 50% 0 0;
      -moz-border-radius: 50% 50% 0 0;
@@ -373,6 +373,11 @@ footer {
   position: relative;
   z-index: 1;
   color: rgba(255, 255, 255, 0.5);
+}
+footer p {
+  margin: 0 auto;
+  max-width: 100%;
+  text-align: center;
 }
 
 main {
