@@ -12,11 +12,11 @@
 <body>
 
     <main>
-        <h1>Вход</h1>
+        <h1>Введите код</h1>
         <form action="#">
             <fieldset>
-                <label>Номер телефона</label>
-                <input type="tel" id="phone" required placeholder="(+380) 000-00-00-00">
+                <label>Код из СМС</label>
+                <input type="tel" id="code" required placeholder="000 000">
             </fieldset>
             <!-- <input type="tel" required> -->
             <button class="btn" type="submit">Далее</button>
@@ -27,12 +27,14 @@
             <a href="#"><img src="./img/appstore.png" alt="appstore"></a>
             <a href="#"><img src="./img/playmarket.png" alt="playmarket"></a>
         </div>
+
     </main>
 
     <script src="./js/jquery-3.4.1.min.js"></script>
     <script src="./js/jquery.inputmask.min.js"></script>
     <script>
         $('#phone').inputmask({ "mask": "+380-999-99-99-99" });
+
         function numberWithSpaces(x) { return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") };
 
         $('#code').on('keyup', function () {

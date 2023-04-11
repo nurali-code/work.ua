@@ -10,11 +10,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap')
 
 $black: #07080F
+$green: rgb(141, 198, 65)
 
 body
     min-height: 100vh
-    color: $black
-    background-color: #fff
+    color: #fff
+    background-color: #212121
     font-family: 'Inter', sans-serif
 
 img
@@ -41,65 +42,24 @@ button
     display: inline-block
     text-align: center
     color: #fff
-    padding: 15px 20px 14px
-    min-width: 200px
-    width: 100%
-    max-width: 450px
-    margin: 0 5px 10px
-    border-radius: 11px
-    background-color: blue
-    box-shadow: none !important
-    &[disabled]
-        background-color: #fff
-        opacity: .4
+    padding: 15px 25px 14px
+    margin: 20px 5px 10px
+    border-radius: 5px
+    background-color: rgba($green, .8)
+    position: relative
+    background-repeat: no-repeat
+    background-position: center center
+    background-size: 40px 40px
 
-    img
-        display: inline-block
-        width: 25px
-        height: 25px
-        vertical-align: middle
-        margin: 0 3px 0 0
-        border-radius: 0
+    &[disabled],
+    &.loading
+        color: rgba($green, .2)
+        background-color: rgba($green, .2)
+        cursor: unset
+        animation: none
+        pointer-events: none
+        box-shadow: none
 
-    &.viber
-        background-color: #794a9a
-    &.whatsapp
-        background-color: #24cc63
-    &.telegram
-        background-color: #16b0f2
-
-ol
-    padding: 0 0 0 25px
-    font-weight: 400
-    font-size: 20px
-    line-height: 140%
-
-p
-    font-weight: 400
-    font-size: 20px
-    line-height: 140%
-
-ul
-    list-style: none
-    li
-        font-weight: 400
-        font-size: 20px
-        line-height: 140%
-        padding-left: 20px
-        margin: 0
-        position: relative
-        &::before
-            content: ''
-            display: inline-block
-            position: absolute
-            top: 9px
-            left: 5px
-            width: 7px
-            height: 7px
-            border-radius: 50%
-            background-color: #fff
-
-hr
-    background-color: rgba(255, 255, 255, .3)
-    height: 1px
-    margin: 20px 0 20px
+    &.loading
+        color: transparent
+        background-image: url('../img/loader.gif')
