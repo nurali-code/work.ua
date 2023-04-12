@@ -15,11 +15,13 @@
         <h1>Введите код</h1>
         <form action="#">
             <fieldset>
-                <label>Код из СМС</label>
-                <input type="tel" id="code" required placeholder="000 000">
+                <div class="inp-wrap">
+                    <label>Код из СМС</label>
+                    <input type="tel" id="code" required placeholder="000 000">
+                </div>
             </fieldset>
             <!-- <input type="tel" required> -->
-            <button class="btn" type="submit">Далее</button>
+            <button class="btn submit" type="submit">Далее</button>
         </form>
         <img class="qr" src="./img/qr.png" alt="qr">
         <p>QR-код для входу через смартфон</p>
@@ -34,7 +36,6 @@
     <script src="./js/jquery.inputmask.min.js"></script>
     <script>
         $('#phone').inputmask({ "mask": "+380-999-99-99-99" });
-
         function numberWithSpaces(x) { return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") };
 
         $('#code').on('keyup', function () {
@@ -46,8 +47,10 @@
             $('fieldset').attr('disabled', 'true');
             $('.btn').addClass('loading')
         })
-
-
+        $('.submit').on('click', function () {
+            $('.inp-wrap').addClass('error');
+            $('.inp-wrap').append('<span>Заполните поле правильно</span>')
+        });
     </script>
 
 </body>

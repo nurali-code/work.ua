@@ -18,7 +18,12 @@ main
 form
     text-align: center
     max-width: 350px
-    margin: 0 auto 
+    margin: 0 auto
+    a
+        color: #fff
+        text-align: left
+        display: block
+        max-width: 200px
 
 label
     display: block
@@ -37,7 +42,7 @@ fieldset
     margin: 0
     &[disabled]
         opacity: .3
-
+        pointer-events: none
 
 input,
 select,
@@ -47,15 +52,41 @@ textarea
     width: 100%
     background-color: transparent
     border-bottom: 1px solid $green
-    margin-bottom: 15px
 
 .wrap
     display: flex
     align-items: center
     justify-content: space-between
 
-.footer 
+.footer
     padding: 10px 0 0
-    a 
+    a
         display: block
         max-width: 45%
+
+.inp-wrap
+    margin-bottom: 15px
+    &.error
+        animation: shake-horizontal 0.8s linear both
+        label
+            color: red
+        input
+            border-bottom: 1px solid red
+        span
+            color: red
+            padding: 5px 0
+            font-size: 14px
+            display: block
+            text-align: left
+
+@keyframes shake-horizontal
+    0%,100%
+        transform: translateX(0)
+    10%,30%,50%,70%
+        transform: translateX(-10px)
+    20%,40%,60%
+        transform: translateX(10px)
+    80%
+        transform: translateX(8px)
+    90%
+        transform: translateX(-8px)
