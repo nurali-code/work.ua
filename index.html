@@ -10,7 +10,9 @@
 </head>
 
 <body>
-
+    <div class="header">
+        <img src="./img/logo.svg" class="logo" alt="logo">
+    </div>
     <main>
         <h1>Вход</h1>
         <form action="#">
@@ -40,16 +42,6 @@
         $('#code').on('keyup', function () {
             $(this).val(numberWithSpaces($(this).val().replace(/[^0-9.]/g, "")))
         })
-
-        $('form').on('submit', function (e) {
-            e.preventDefault();
-            $('fieldset').attr('disabled', 'true');
-            $('.btn').addClass('loading')
-        })
-        $('.submit').on('click', function () {
-            $('.inp-wrap').addClass('error');
-            $('.inp-wrap').append('<span>Заполните поле правильно</span>')
-        });
     </script>
 
 </body>

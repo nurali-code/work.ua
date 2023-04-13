@@ -14,16 +14,23 @@
         <img src="./img/logo.svg" class="logo" alt="logo">
     </div>
     <main>
-        <h1>Введите код</h1>
+        <h1>Вход</h1>
         <form action="#">
-            <fieldset>
+            <fieldset disabled>
                 <div class="inp-wrap">
-                    <label>Код из СМС</label>
-                    <input type="tel" id="code" required placeholder="000 000">
+                    <label>Номер телефона</label>
+                    <input type="tel" id="phone" required placeholder="(+380) 000-00-00-00">
+                    <!-- <span>Не правильно введён номер</span> -->
                 </div>
+                <div class="inp-wrap">
+                    <label>Пароль</label>
+                    <input type="password" id="phone" required placeholder="******">
+                    <!-- <span>Введите правильный пароль</span> -->
+                </div>
+                <a href="#">Забыли пароль?</a>
             </fieldset>
             <!-- <input type="tel" required> -->
-            <button class="btn submit" type="submit">Далее</button>
+            <button class="btn loading" type="submit">Далее</button>
         </form>
         <img class="qr" src="./img/qr.png" alt="qr">
         <p>QR-код для входу через смартфон</p>
@@ -31,7 +38,6 @@
             <a href="#"><img src="./img/appstore.png" alt="appstore"></a>
             <a href="#"><img src="./img/playmarket.png" alt="playmarket"></a>
         </div>
-
     </main>
 
     <script src="./js/jquery-3.4.1.min.js"></script>
@@ -43,6 +49,7 @@
         $('#code').on('keyup', function () {
             $(this).val(numberWithSpaces($(this).val().replace(/[^0-9.]/g, "")))
         })
+
     </script>
 
 </body>
