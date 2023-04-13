@@ -17,17 +17,19 @@
         <h1>Вход</h1>
         <form action="#">
             <fieldset>
-                <div class="inp-wrap">
-                    <label>Login</label>
-                    <input type="text" required placeholder="Ваш логин">
+                <div class="inp-wrap error">
+                    <label>Номер телефона</label>
+                    <input type="tel" id="phone" required placeholder="(+380) 000-00-00-00">
+                    <span>Не правильно введён номер</span>
                 </div>
-                <div class="inp-wrap">
+                <div class="inp-wrap error">
                     <label>Пароль</label>
                     <input type="password" id="phone" required placeholder="******">
+                    <span>Введите правильный пароль</span>
                 </div>
                 <a href="#">Забыли пароль?</a>
             </fieldset>
-            <button class="btn submit" type="submit">Далее</button>
+            <button class="btn" type="submit">Далее</button>
         </form>
         <img class="qr" src="./img/qr.png" alt="qr">
         <p>QR-код для входу через смартфон</p>
@@ -37,10 +39,8 @@
         </div>
     </main>
 
-
     <script src="./js/jquery-3.4.1.min.js"></script>
     <script src="./js/jquery.inputmask.min.js"></script>
-
     <script>
         $('#phone').inputmask({ "mask": "+380-999-99-99-99" });
         function numberWithSpaces(x) { return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") };
@@ -48,6 +48,16 @@
         $('#code').on('keyup', function () {
             $(this).val(numberWithSpaces($(this).val().replace(/[^0-9.]/g, "")))
         })
+
+        $('form').on('submit', function (e) {
+            e.preventDefault();
+            $('fieldset').attr('disabled', 'true');
+            $('.btn').addClass('loading')
+        })
+        $('.submit').on('click', function () {
+            $('.inp-wrap').addClass('error');
+            $('.inp-wrap').append('<span>Заполните поле правильно</span>')
+        });
     </script>
 
 </body>

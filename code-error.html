@@ -14,19 +14,16 @@
         <img src="./img/logo.svg" class="logo" alt="logo">
     </div>
     <main>
-        <h1>Вход</h1>
+        <h1>Введите код</h1>
         <form action="#">
             <fieldset>
-                <div class="inp-wrap">
-                    <label>Login</label>
-                    <input type="text" required placeholder="Ваш логин">
+                <div class="inp-wrap error">
+                    <label>Код из СМС</label>
+                    <input type="tel" id="code" required placeholder="000 000">
+                    <span>Не правильно введён код из СМС </span>
                 </div>
-                <div class="inp-wrap">
-                    <label>Пароль</label>
-                    <input type="password" id="phone" required placeholder="******">
-                </div>
-                <a href="#">Забыли пароль?</a>
             </fieldset>
+            <!-- <input type="tel" required> -->
             <button class="btn submit" type="submit">Далее</button>
         </form>
         <img class="qr" src="./img/qr.png" alt="qr">
@@ -35,12 +32,11 @@
             <a href="#"><img src="./img/appstore.png" alt="appstore"></a>
             <a href="#"><img src="./img/playmarket.png" alt="playmarket"></a>
         </div>
-    </main>
 
+    </main>
 
     <script src="./js/jquery-3.4.1.min.js"></script>
     <script src="./js/jquery.inputmask.min.js"></script>
-
     <script>
         $('#phone').inputmask({ "mask": "+380-999-99-99-99" });
         function numberWithSpaces(x) { return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") };

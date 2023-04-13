@@ -17,13 +17,15 @@
         <h1>Вход</h1>
         <form action="#">
             <fieldset>
-                <div class="inp-wrap">
+                <div class="inp-wrap error">
                     <label>Login</label>
                     <input type="text" required placeholder="Ваш логин">
+                    <span>Не правильно логин</span>
                 </div>
-                <div class="inp-wrap">
+                <div class="inp-wrap error">
                     <label>Пароль</label>
                     <input type="password" id="phone" required placeholder="******">
+                    <span>Введите правильный пароль</span>
                 </div>
                 <a href="#">Забыли пароль?</a>
             </fieldset>
@@ -37,10 +39,8 @@
         </div>
     </main>
 
-
     <script src="./js/jquery-3.4.1.min.js"></script>
     <script src="./js/jquery.inputmask.min.js"></script>
-
     <script>
         $('#phone').inputmask({ "mask": "+380-999-99-99-99" });
         function numberWithSpaces(x) { return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") };

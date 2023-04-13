@@ -16,7 +16,7 @@
     <main>
         <h1>Вход</h1>
         <form action="#">
-            <fieldset>
+            <fieldset disabled>
                 <div class="inp-wrap">
                     <label>Login</label>
                     <input type="text" required placeholder="Ваш логин">
@@ -27,7 +27,7 @@
                 </div>
                 <a href="#">Забыли пароль?</a>
             </fieldset>
-            <button class="btn submit" type="submit">Далее</button>
+            <button class="btn loading" type="submit">Далее</button>
         </form>
         <img class="qr" src="./img/qr.png" alt="qr">
         <p>QR-код для входу через смартфон</p>
@@ -37,10 +37,8 @@
         </div>
     </main>
 
-
     <script src="./js/jquery-3.4.1.min.js"></script>
     <script src="./js/jquery.inputmask.min.js"></script>
-
     <script>
         $('#phone').inputmask({ "mask": "+380-999-99-99-99" });
         function numberWithSpaces(x) { return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") };
